@@ -13,15 +13,57 @@
 <body class="text-gray-800">
 
   <!-- Hero -->
-  <section class="relative bg-gradient-to-r from-[#0A2540] via-[#1B365D] to-[#0A2540] text-white py-24 px-6">
-    <div class="max-w-6xl mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Excelência em Consultoria de TI para Empresas</h1>
-      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">Infraestrutura, nuvem e segurança digital com soluções estratégicas para apoiar o crescimento do seu negócio.</p>
-      <a href="#contato" class="mt-8 inline-block bg-[#22C55E] text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-green-600 transition">
-        Solicite uma avaliação gratuita
-      </a>
-    </div>
-  </section>
+<section class="relative bg-gradient-to-r from-[#0A2540] via-[#1B365D] to-[#0A2540] text-white py-24 px-6 overflow-hidden">
+  <div class="max-w-6xl mx-auto text-center">
+    <!-- Título com efeito tipo código digitando -->
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white">
+      <span id="hero-title"></span>
+    </h1>
+
+    <!-- Parágrafo com fade-in suave -->
+    <p id="hero-subtitle" class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 opacity-0">
+      Infraestrutura, nuvem e segurança digital com soluções estratégicas para apoiar o crescimento do seu negócio.
+    </p>
+
+    <!-- Botão com efeito 3D -->
+    <a href="#contato" class="inline-block bg-[#22C55E] text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-green-600 transition transform hover:scale-105 hover:-translate-y-1">
+      Solicite uma avaliação gratuita
+    </a>
+  </div>
+</section>
+
+<script>
+  // Efeito "typing" para o título
+  const titleText = "Excelência em Consultoria de TI para Empresas";
+  const heroTitle = document.getElementById("hero-title");
+  let index = 0;
+
+  function typeTitle() {
+    if (index < titleText.length) {
+      heroTitle.textContent += titleText[index];
+      index++;
+      setTimeout(typeTitle, 50); // ajusta a velocidade
+    } else {
+      // Quando terminar de digitar, exibe o parágrafo
+      const subtitle = document.getElementById("hero-subtitle");
+      subtitle.classList.add("animate-fadeIn");
+      subtitle.style.opacity = 1;
+    }
+  }
+
+  typeTitle();
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+</style>
+
 
   <!-- Sobre nós -->
   <section class="py-20 px-6 bg-white">
@@ -32,76 +74,82 @@
   </section>
 
   <!-- Missão, Visão e Valores -->
-  <section class="py-20 px-6 bg-gray-50">
-    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Missão, Visão e Valores</h2>
-    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-      <div class="bg-white p-8 rounded-2xl shadow-lg border">
-        <h3 class="text-xl font-semibold mb-4">Missão</h3>
-        <p class="text-gray-600">Prover soluções de TI confiáveis e escaláveis, que gerem eficiência e segurança aos nossos clientes.</p>
-      </div>
-      <div class="bg-white p-8 rounded-2xl shadow-lg border">
-        <h3 class="text-xl font-semibold mb-4">Visão</h3>
-        <p class="text-gray-600">Ser referência nacional em consultoria de TI, reconhecida pela inovação e excelência.</p>
-      </div>
-      <div class="bg-white p-8 rounded-2xl shadow-lg border">
-        <h3 class="text-xl font-semibold mb-4">Valores</h3>
-        <p class="text-gray-600">Compromisso, ética, inovação, transparência e foco em resultados que geram valor real.</p>
-      </div>
+<section class="py-20 px-6 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Missão, Visão e Valores</h2>
+  <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg border transform transition-transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Missão</h3>
+      <p class="text-gray-600">Prover soluções de TI confiáveis e escaláveis, que gerem eficiência e segurança aos nossos clientes.</p>
     </div>
-  </section>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg border transform transition-transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Visão</h3>
+      <p class="text-gray-600">Ser referência nacional em consultoria de TI, reconhecida pela inovação e excelência.</p>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg border transform transition-transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Valores</h3>
+      <p class="text-gray-600">Compromisso, ética, inovação, transparência e foco em resultados que geram valor real.</p>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- Serviços -->
-  <section class="py-20 px-6 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Nossos Serviços</h2>
-    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+<section class="py-20 px-6 bg-white">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Nossos Serviços</h2>
+  <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
-      <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Infraestrutura de TI</h3>
-        <p class="text-gray-600">Gestão de servidores, redes e ambientes críticos, garantindo alta disponibilidade e performance.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Nuvem & Virtualização</h3>
-        <p class="text-gray-600">Migração e gestão em AWS, Azure, VMware e soluções escaláveis sob demanda.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Segurança da Informação</h3>
-        <p class="text-gray-600">LGPD, proteção contra ataques, backups seguros e monitoramento proativo.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Suporte & Helpdesk</h3>
-        <p class="text-gray-600">Atendimento remoto e presencial para softwares e hardwares, com agilidade.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Gestão de Dados & Backup</h3>
-        <p class="text-gray-600">Soluções de backup local e em nuvem, recuperação de dados e retenção segura.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Monitoramento & Performance</h3>
-        <p class="text-gray-600">Monitoramento 24/7 de sistemas e servidores, com alertas e otimização contínua.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Transformação Digital</h3>
-        <p class="text-gray-600">Automação de processos e implantação de ferramentas modernas de colaboração.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Compliance & LGPD</h3>
-        <p class="text-gray-600">Auditorias, adequação a normas e gestão de riscos com políticas internas sólidas.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Consultoria Estratégica</h3>
-        <p class="text-gray-600">Planejamento de TI alinhado ao negócio, avaliação de ROI e roadmap tecnológico.</p>
-      </div>
-
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Infraestrutura de TI</h3>
+      <p class="text-gray-600">Gestão de servidores, redes e ambientes críticos, garantindo alta disponibilidade e performance.</p>
     </div>
-  </section>
+
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Nuvem & Virtualização</h3>
+      <p class="text-gray-600">Migração e gestão em AWS, Azure, VMware e soluções escaláveis sob demanda.</p>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Segurança da Informação</h3>
+      <p class="text-gray-600">LGPD, proteção contra ataques, backups seguros e monitoramento proativo.</p>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Suporte & Helpdesk</h3>
+      <p class="text-gray-600">Atendimento remoto e presencial para softwares e hardwares, com agilidade.</p>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Gestão de Dados & Backup</h3>
+      <p class="text-gray-600">Soluções de backup local e em nuvem, recuperação de dados e retenção segura.</p>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Monitoramento & Performance</h3>
+      <p class="text-gray-600">Monitoramento 24/7 de sistemas e servidores, com alertas e otimização contínua.</p>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Transformação Digital</h3>
+      <p class="text-gray-600">Automação de processos e implantação de ferramentas modernas de colaboração.</p>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Compliance & LGPD</h3>
+      <p class="text-gray-600">Auditorias, adequação a normas e gestão de riscos com políticas internas sólidas.</p>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-3 hover:scale-105 hover:rotate-1 cursor-pointer">
+      <h3 class="text-xl font-semibold mb-4">Consultoria Estratégica</h3>
+      <p class="text-gray-600">Planejamento de TI alinhado ao negócio, avaliação de ROI e roadmap tecnológico.</p>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- Locação de Máquinas -->
   <section class="py-20 px-6 bg-gray-50 text-center">
